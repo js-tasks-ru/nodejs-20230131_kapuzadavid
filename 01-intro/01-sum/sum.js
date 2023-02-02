@@ -1,9 +1,11 @@
+const _ = require('lodash');
+
 function sum(a, b) {
-  if ([a, b].some((value) => typeof value !== 'number')) {
+  if (_.isInteger(a) && _.isInteger(b)) {
+    return a + b;
+  } else {
     throw new TypeError();
   }
-
-  return a + b;
 }
 
 module.exports = sum;
